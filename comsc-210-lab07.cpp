@@ -8,8 +8,8 @@ using namespace std;
 const int SIZE = 5;
 
 //Function Prototypes
-void reverseArray();
-void displayArray();
+void reverseArray(string *arr, int SIZE);
+void displayArray(string *arr, int SIZE);
 
 int main() {
 
@@ -17,11 +17,11 @@ int main() {
     arr = new string[SIZE];
 
     for(int i = 0; i < SIZE; i++){
-        cout << "Enter The Name For Element #" << i;
-        cin >> *(arr + i);
+        cout << "Enter The Name For Element #" << i << " ";
+        getline(cin, *(arr + i));
     }
 
-    
+    displayArray(arr, SIZE);
 
 }
 
@@ -30,5 +30,9 @@ void reverseArray(){
 }
 
 void displayArray(string* arr, int SIZE){
-    for(int i = 0;)
+    cout << "Original Array: ";
+
+    for(int i = 0; i < SIZE; i++){
+        cout << *(arr + i) << " ";
+    }
 }
