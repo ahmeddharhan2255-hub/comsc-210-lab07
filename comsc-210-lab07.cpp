@@ -8,7 +8,7 @@ using namespace std;
 const int SIZE = 5;
 
 //Function Prototypes
-void reverseArray(string *arr, int SIZE);
+string reverseArray(string *arr, int SIZE);
 void displayArray(string *arr, int SIZE);
 
 int main() {
@@ -21,12 +21,17 @@ int main() {
         getline(cin, *(arr + i));
     }
 
-    displayArray(arr, SIZE);
+    reverseArray(arr, SIZE);
 
 }
 
-void reverseArray(){
+string reverseArray(string *arr, int SIZE){
+    for (int i = 0; i < SIZE; i++){
+        *(arr + i) = *(arr + (SIZE - i));
+        cout << *(arr + i) << endl;
+    }
 
+    return *arr;
 }
 
 void displayArray(string* arr, int SIZE){
