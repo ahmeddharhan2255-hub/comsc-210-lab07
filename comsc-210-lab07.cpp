@@ -8,8 +8,8 @@ using namespace std;
 const int SIZE = 5;
 
 //Function Prototypes
-string reverseArray(string *arr, int SIZE);
-void displayArray(string *arr, int SIZE);
+string reverseArray(string *arr);
+void displayArray(string *arr);
 
 int main() {
 
@@ -33,20 +33,20 @@ int main() {
 
 }
 
-string reverseArray(string *arr, int SIZE){
-    string temp[5];
+string reverseArray(string *arr){
+    string* temp = new string[SIZE];
 
     for(int i = 0; i < SIZE; i++){
-        *(temp + i) = *(temp - i - 1);
+        *(temp + i) = *(arr - i - 1);
     }
 
-    *arr = temp;
+    *arr = *temp;
 
     return *arr;
 }
 
 
-void displayArray(string* arr, int SIZE){
+void displayArray(string* arr){
     cout << "Original Array: ";
 
     for(int i = 0; i < SIZE; i++){
