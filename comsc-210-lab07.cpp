@@ -21,13 +21,30 @@ int main() {
         getline(cin, *(arr + i));
     }
 
+    cout << "Original Array: ";
     displayArray(arr,SIZE);
+
+    cout << "Reversed Array: ";
+    reverseArray(arr,SIZE);
 
     delete[] arr;
 
     arr = nullptr;
 
 }
+
+string reverseArray(string *arr, int SIZE){
+    string temp[5];
+
+    for(int i = 0; i < SIZE; i++){
+        *(temp + i) = *(temp - i - 1);
+    }
+
+    *arr = temp;
+
+    return *arr;
+}
+
 
 void displayArray(string* arr, int SIZE){
     cout << "Original Array: ";
